@@ -7,6 +7,8 @@ public class PlayGame {
 
     private boolean up, down;
     GameManager manager = new GameManager();
+    Gameboard board = new Gameboard();
+    GUI gui_gamescreen = new GUI();
     public PlayGame(){}
 
     public void selectOption(String menuOption){
