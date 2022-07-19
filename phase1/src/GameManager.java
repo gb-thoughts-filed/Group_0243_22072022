@@ -31,7 +31,7 @@ public class GameManager{
     public boolean runGame(){
         // if we don't want to make player an instance variable, call it here
         // GamePlayer newPlayer = new GamePlayer(UserAccount username insert here)
-        Gameboard grid = new Gameboard();
+        GameBoard grid = new GameBoard();
         timer.start();
         if(grid.isTouchingBottom(this.player) || grid.isTouchingObstacle(this.player)){
             return endGame();

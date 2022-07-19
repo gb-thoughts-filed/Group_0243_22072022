@@ -7,7 +7,7 @@ public class PlayGame {
 
     private boolean up, down;
     GameManager manager = new GameManager();
-    Gameboard board = new Gameboard();
+    GameBoard board = new GameBoard();
     GUI gui_gamescreen = new GUI();
     public PlayGame(){}
 

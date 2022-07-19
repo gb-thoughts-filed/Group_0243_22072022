@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Gameboard {
+public class GameBoard {
 
     private final int width = 300;
 
@@ -14,9 +14,17 @@ public class Gameboard {
 
     private final String player_username = UserAccount.getUsername();
 
-    public Gameboard() {
+    /**
+     * Creates new GameBoard object.
+     */
+    public GameBoard() {
     }
 
+    /**
+     * Checks if player has hit an obstacle.
+     * @param player the player in the current game
+     * @return boolean
+     */
     public boolean isTouchingObstacle(GamePlayer player) {
         for (Obstacle o : obstacleList) {
             int oLocation = o.getLocation();
@@ -31,11 +39,21 @@ public class Gameboard {
         return false;
     }
 
+    /**
+     * Checks if player has hit the bottom of the game board.
+     * @param player the player in the current game
+     * @return boolean
+     */
     public boolean isTouchingBottom(GamePlayer player) {
         List<Double> playerPosition = player.getLocation();
         return playerPosition.get(1) < 0;
     }
 
+    /**
+     * Checks if player has collected a reward.
+     * @param player the player in the current game
+     * @return boolean
+     */
     public boolean isTouchingReward(GamePlayer player) {
         List<Double> playerPosition = player.getLocation();
         Double xPos = playerPosition.get(0);
@@ -49,14 +67,24 @@ public class Gameboard {
         return false;
     }
 
+    /**
+     * Adds new obstacle to the game board.
+     */
     public void addObstacle() {
         obstacleList.add(randomizeObstacle());
     }
 
+    /**
+     * Adds new reward to the game board.
+     */
     public void addReward() {
         rewardsList.add(randomizeReward());
     }
 
+    /**
+     * Creates a new randomized obstacle.
+     * @return Obstacle
+     */
     public Obstacle randomizeObstacle() {
         List<Obstacle> obstacleList = new ArrayList<>();
         obstacleList.add(new Obstacle(160, 80, this.width));
@@ -67,6 +95,10 @@ public class Gameboard {
         return obstacleList.get(index);
     }
 
+    /**
+     * Creates a new randomized reward.
+     * @return Rewards
+     */
     public Rewards randomizeReward() {
         List<Rewards> reward = new ArrayList<>();
         Random rand = new Random();
@@ -76,6 +108,9 @@ public class Gameboard {
         return reward.get(index);
     }
 
+    /**
+     * Moves all the objects on the game board (excluding player) to the left by 1 square.
+     */
     public void moveObjects() {
         for (Obstacle o : obstacleList) {
             o.moveLeft();
