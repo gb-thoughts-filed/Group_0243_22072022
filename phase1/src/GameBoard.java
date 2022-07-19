@@ -18,6 +18,9 @@ public class GameBoard {
      * Creates new GameBoard object.
      */
     public GameBoard() {
+        this.obstacleList.add(new Obstacle(120, 120, 100));
+        this.obstacleList.add(randomizeObstacle());
+        obstacleList.get(1).setLocation(220);
     }
 
     /**
@@ -58,32 +61,48 @@ public class GameBoard {
         List<Double> playerPosition = player.getLocation();
         Double xPos = playerPosition.get(0);
         Double yPos = playerPosition.get(1);
+        List<Reward> remove = new ArrayList<>();
         for (Reward r : rewardsList) {
             List<Double> rewardPosition = r.getRewardsLocation();
             if (xPos > rewardPosition.get(0) && xPos - player.getHeight() < rewardPosition.get(0) + r.getWidth()) {
                 if (yPos + player.getHeight() > rewardPosition.get(1) && yPos < rewardPosition.get(1) + r.getHeight()) {
-                    return r;
-                } else {
-                    return null;
+                    remove.add(r);
                 }
             }
+        }
+        return removeReward(remove);
+    }
+
+    private Reward removeReward(List<Reward> remove) {
+        if (!remove.isEmpty()) {
+            rewardsList.remove(remove.get(0));
+            return remove.get(0);
         }
         return null;
     }
 
-
     /**
      * Adds new obstacle to the game board.
      */
-    public void addObstacle() {
-        obstacleList.add(randomizeObstacle());
+    public void updateObstacles() {
+        if (obstacleList.get(0).getLocation() == 60) {
+            obstacleList.add(randomizeObstacle());
+        } else if (obstacleList.get(0).getLocation() + obstacleList.get(0).getWidth() == 0) {
+            obstacleList.remove(0);
+        }
     }
 
     /**
      * Adds new reward to the game board.
      */
-    public void addReward() {
-        rewardsList.add(randomizeReward());
+    public void updateRewards() {
+        Obstacle last = obstacleList.get(obstacleList.size() - 1);
+        if (last.getLocation() == 300) {
+            rewardsList.add(randomizeReward());
+        }
+        if (rewardsList.get(0).getXCoordinate() + rewardsList.get(0).getWidth() == 0) {
+            rewardsList.remove(0);
+        }
     }
 
     /**

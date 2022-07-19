@@ -7,9 +7,9 @@ public class Reward {
     private final Dimension dimensions = new Dimension(10, 10);
 
 
-    public Reward(double start_x, double start_y){
-        rewardLocation.x = (int) start_x;
-        rewardLocation.y = (int) start_y;
+    public Reward(int start_x, int start_y){
+        rewardLocation.x = start_x;
+        rewardLocation.y = start_y;
     }
 
     public List<Double> getRewardsLocation(){
@@ -19,6 +19,8 @@ public class Reward {
         coordinates.add((double) rewardLocation.y);
         return coordinates;
     }
+
+    public int getXCoordinate() { return rewardLocation.x; }
 
     public void moveLeft() {
         rewardLocation.x -= 1;

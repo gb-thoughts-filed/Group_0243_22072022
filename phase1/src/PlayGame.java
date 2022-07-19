@@ -1,6 +1,11 @@
 import java.awt.event.KeyEvent;
 import java.util.Map;
 import java.awt.event.KeyListener;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class PlayGame {
     private KeyListener listener;
@@ -36,7 +41,7 @@ public class PlayGame {
     }
 
     public void runGame(){
-        manager.runGame();
+        manager.startGame();
         while(manager.runGame()) {
             if (up) {
                 manager.moveUp();

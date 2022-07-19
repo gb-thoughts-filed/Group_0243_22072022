@@ -37,4 +37,6 @@ public class Obstacle {
     public void moveLeft() {
         xCoordinate -= 1;
     }
+
+    public void setLocation(int x) { this.xCoordinate = x; }
 }

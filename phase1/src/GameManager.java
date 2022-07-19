@@ -57,24 +57,33 @@ public class GameManager{
      * @return boolean
      */
     public boolean runGame() {
+        grid.moveObjects();
+        grid.updateObstacles();
+        grid.updateRewards();
+        return !isTouching();
+    }
+
+    private boolean isTouching() {
         if(grid.isTouchingBottom(this.player) || grid.isTouchingObstacle(this.player)){
-            return endGame();
+            endGame();
+            return true;
         } else if (grid.isTouchingReward(this.player) != null) {
             Reward r = grid.isTouchingReward(this.player);
             if (r instanceof PoisonApple) {
-                return endGame();
+                endGame();
+                return true;
             } else if (r instanceof GoldenApple) {
                 this.totalGoldenApples.add(r);
             }
         }
-        return true;
+        return false;
     }
 
     /**
      * Ends the current game, calculates the score of the game and updates the leaderboard, if required.
      * @return boolean
      */
-    public boolean endGame(){
+    public void endGame() {
         Leaderboard scoreBoard = new Leaderboard();
         timer.stop();
         score = (int)timer.getElapsedSeconds();
@@ -83,7 +92,6 @@ public class GameManager{
         }else{
             scoreBoard.updateExistingScore(player.getUsername(), score);
         }
-        return false;
     }
 
     /**
