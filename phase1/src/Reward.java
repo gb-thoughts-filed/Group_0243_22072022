@@ -1,20 +1,20 @@
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 public class Reward {
 
 
-    private Point rewardLocation;
+    private final Point rewardLocation = new Point();
     private final Dimension dimensions = new Dimension(10, 10);
 
 
     public Reward(int start_x, int start_y){
-        rewardLocation.x = start_x;
+        this.rewardLocation.x = start_x;
         rewardLocation.y = start_y;
     }
 
     public List<Double> getRewardsLocation(){
-
-        List<Double> coordinates = null;
+        List<Double> coordinates = new ArrayList<>();
         coordinates.add((double) rewardLocation.x);
         coordinates.add((double) rewardLocation.y);
         return coordinates;

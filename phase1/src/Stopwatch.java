@@ -1,18 +1,20 @@
-public class Stopwatch extends GameManager{
+public class Stopwatch {
     private long stopWatchStartTime = 0;
     private long stopWatchStopTime = 0;
-    private boolean stopWatchRunning = false;
+    private boolean stopWatchRunning;
 
     public Stopwatch(){
+        this.stopWatchRunning = false;
     }
 
     public boolean isStopWatchRunning(){
         return stopWatchRunning;
     }
 
-    public void start() {
+    public boolean start() {
         this.stopWatchStartTime = System.nanoTime();
         this.stopWatchRunning = true;
+        return true;
     }
 
 

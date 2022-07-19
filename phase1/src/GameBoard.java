@@ -100,8 +100,10 @@ public class GameBoard {
         if (last.getLocation() == 300) {
             rewardsList.add(randomizeReward());
         }
-        if (rewardsList.get(0).getXCoordinate() + rewardsList.get(0).getWidth() == 0) {
-            rewardsList.remove(0);
+        if (!rewardsList.isEmpty()) {
+            if (rewardsList.get(0).getXCoordinate() + rewardsList.get(0).getWidth() == 0) {
+                rewardsList.remove(0);
+            }
         }
     }
 

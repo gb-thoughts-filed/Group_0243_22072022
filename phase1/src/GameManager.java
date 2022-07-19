@@ -19,6 +19,7 @@ public class GameManager{
     public GameManager(){
         player = new GamePlayer(UserAccount.getUsername());
         score = 0;
+        timer = new Stopwatch();
     }
 
     /**

@@ -1,11 +1,6 @@
 import java.awt.event.KeyEvent;
 import java.util.Map;
 import java.awt.event.KeyListener;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 public class PlayGame {
     private KeyListener listener;
@@ -62,8 +57,8 @@ public class PlayGame {
             @Override
             public void keyPressed(KeyEvent e) {
                 switch (e.getKeyCode()) {
-                    case KeyEvent.VK_DOWN -> down = true;
-                    case KeyEvent.VK_UP -> up = true;
+                    case KeyEvent.VK_DOWN: down = true;
+                    case KeyEvent.VK_UP: up = true;
                 }
 
             }
@@ -71,13 +66,11 @@ public class PlayGame {
             @Override
             public void keyReleased(KeyEvent e) {
                 switch (e.getKeyCode()) {
-                    case KeyEvent.VK_DOWN -> down = false;
-                    case KeyEvent.VK_UP -> up = false;
+                    case KeyEvent.VK_DOWN: down = false;
+                    case KeyEvent.VK_UP: up = false;
                 }
 
             }
         };
-
-
     }
 }
