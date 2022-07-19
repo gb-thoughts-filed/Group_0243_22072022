@@ -8,7 +8,7 @@ public class GameBoard {
 
     private final int height = 600;
 
-    private final List<Rewards> rewardsList = new ArrayList<>();
+    private final List<Reward> rewardsList = new ArrayList<>();
 
     private final List<Obstacle> obstacleList = new ArrayList<>();
 
@@ -54,18 +54,23 @@ public class GameBoard {
      * @param player the player in the current game
      * @return boolean
      */
-    public boolean isTouchingReward(GamePlayer player) {
+    public Reward isTouchingReward(GamePlayer player) {
         List<Double> playerPosition = player.getLocation();
         Double xPos = playerPosition.get(0);
         Double yPos = playerPosition.get(1);
-        for (Rewards r : rewardsList) {
+        for (Reward r : rewardsList) {
             List<Double> rewardPosition = r.getRewardsLocation();
             if (xPos > rewardPosition.get(0) && xPos - player.getHeight() < rewardPosition.get(0) + r.getWidth()) {
-                return yPos + player.getHeight() > rewardPosition.get(1) && yPos < rewardPosition.get(1) + r.getHeight();
-            } else { return false; }
+                if (yPos + player.getHeight() > rewardPosition.get(1) && yPos < rewardPosition.get(1) + r.getHeight()) {
+                    return r;
+                } else {
+                    return null;
+                }
+            }
         }
-        return false;
+        return null;
     }
+
 
     /**
      * Adds new obstacle to the game board.
@@ -99,8 +104,8 @@ public class GameBoard {
      * Creates a new randomized reward.
      * @return Rewards
      */
-    public Rewards randomizeReward() {
-        List<Rewards> reward = new ArrayList<>();
+    public Reward randomizeReward() {
+        List<Reward> reward = new ArrayList<>();
         Random rand = new Random();
         reward.add(new PoisonApple(this.width + 70, rand.nextInt(this.height - 20) + 5));
         reward.add(new GoldenApple(this.width + 70, rand.nextInt(this.height - 20) + 5));
@@ -109,13 +114,13 @@ public class GameBoard {
     }
 
     /**
-     * Moves all the objects on the game board (excluding player) to the left by 1 square.
+     * Moves all objects on the game board (excluding player) left by 1 square.
      */
     public void moveObjects() {
         for (Obstacle o : obstacleList) {
             o.moveLeft();
-        }
-        for (Rewards r : rewardsList) {
+            }
+        for (Reward r : rewardsList) {
             r.moveLeft();
         }
     }

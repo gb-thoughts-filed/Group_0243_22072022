@@ -1,13 +1,13 @@
 import java.awt.*;
 import java.util.List;
-public class Rewards {
+public class Reward {
 
 
     private Point rewardLocation;
     private final Dimension dimensions = new Dimension(10, 10);
 
 
-    public Rewards(double start_x, double start_y){
+    public Reward(double start_x, double start_y){
         rewardLocation.x = (int) start_x;
         rewardLocation.y = (int) start_y;
     }

@@ -5,9 +5,11 @@ import java.util.Random;
 public class GameManager{
     private Stopwatch timer;
 
-    private List<GoldenApple> total_golden_apples;
+    private List<Reward> totalGoldenApples;
 
     private final GamePlayer player;
+
+    private GameBoard grid;
     int score;
 
     /**
@@ -40,17 +42,30 @@ public class GameManager{
     }
 
     /**
-     * Starts a new game and ends it when the player has hit an obstacle or the bottom of the game board. Calculates
+     * Starts a new game.
+     */
+    public void startGame() {
+        // if we don't want to make player an instance variable, call it here
+        // GamePlayer newPlayer = new GamePlayer(UserAccount username insert here)
+        this.grid = new GameBoard();
+        timer.start();
+    }
+
+    /**
+     * Runs the game and ends it when the player has hit an obstacle or the bottom of the game board. Calculates
      * the score and updates the leaderboard after the game ended.
      * @return boolean
      */
-    public boolean runGame(){
-        // if we don't want to make player an instance variable, call it here
-        // GamePlayer newPlayer = new GamePlayer(UserAccount username insert here)
-        GameBoard grid = new GameBoard();
-        timer.start();
+    public boolean runGame() {
         if(grid.isTouchingBottom(this.player) || grid.isTouchingObstacle(this.player)){
             return endGame();
+        } else if (grid.isTouchingReward(this.player) != null) {
+            Reward r = grid.isTouchingReward(this.player);
+            if (r instanceof PoisonApple) {
+                return endGame();
+            } else if (r instanceof GoldenApple) {
+                this.totalGoldenApples.add(r);
+            }
         }
         return true;
     }
@@ -85,7 +100,7 @@ public class GameManager{
      * Golden Apples collected. Stores it in an instance variable.
      */
     public void generateRewardScore(){
-        score = (int)timer.getElapsedSeconds() + total_golden_apples.size() * 10;
+        score = (int)timer.getElapsedSeconds() + totalGoldenApples.size() * 10;
     }
 
     /**

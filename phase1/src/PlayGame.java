@@ -9,6 +9,10 @@ public class PlayGame {
     GameManager manager = new GameManager();
     GameBoard board = new GameBoard();
     GUI gui_gamescreen = new GUI();
+
+    /**
+     * Creates new PlayGame object.
+     */
     public PlayGame(){}
 
     public void selectOption(String menuOption){
