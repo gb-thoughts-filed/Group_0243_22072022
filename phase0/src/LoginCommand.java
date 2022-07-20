@@ -1,4 +1,5 @@
-import java.time.LocalDateTime;
+import java.io.FileWriter;
+import java.io.IOException;
 public class LoginCommand {
 
     private final AccountSystem system; //Account System
@@ -84,6 +85,7 @@ public class LoginCommand {
         else{
             if (cred.isValidPassword(input)) {
                 newPassword = input;
+                writeTo(newUsername, newPassword);
                 return true;
             }
             else {lineNumber -= 1; return false;}
@@ -95,6 +97,20 @@ public class LoginCommand {
             admin = true;
         }
         system.createUser(newUsername, newPassword, admin);
+    }
+
+    public void writeTo(String username, String password) {
+        try {
+            FileWriter writer = new FileWriter("userdata.txt", true);
+            writer.write(username);
+            writer.write("\r\n");
+            writer.write(password);
+            writer.write("\r\n");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
     public boolean isRunning() {
         return running;

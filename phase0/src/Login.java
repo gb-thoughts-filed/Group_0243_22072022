@@ -29,14 +29,14 @@ public class Login {
                 System.out.println("Enter password");
             }
             else if (line == 6) {
-                System.out.println("Welcome" + command.getLoginUsername() +"\n" + command.getLoginUsername() +
+                System.out.println("Welcome " + command.getLoginUsername() +"\n" + command.getLoginUsername() +
                         "'s login times: " + command.getAccountSystem().logIn(command.getLoginUsername(),
                         command.getLoginPassword()).loginHistory(LocalDateTime.now()));
             }
             else if (line == 8) {
                 System.out.println("Invalid Username or Password");
             }
-            if (line != 8) {
+            if ((line != 8) & (line != 6)) {
                 String userInput = myObj.nextLine();
                 line = command.inputCheck(userInput);
             } else {line = 0;}
