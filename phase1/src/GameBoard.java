@@ -145,6 +145,10 @@ public class GameBoard {
             r.moveLeft();
         }
     }
+
+    public List<Obstacle> getObstacleList() {
+        return obstacleList;
+    }
 }
 
 

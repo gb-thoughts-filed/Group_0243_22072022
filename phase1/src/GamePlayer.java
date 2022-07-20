@@ -2,7 +2,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GamePlayer{
+public class    GamePlayer{
     private String username;
     private Point location;
     private boolean deadEnd;
