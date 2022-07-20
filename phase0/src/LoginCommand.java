@@ -28,6 +28,7 @@ public class LoginCommand {
         int output = 0;
         if (lineNumber == 0) {
             if (input.equals("OLD")) {
+                resetInfo();
                 output = 4;
                 lineNumber = 3;
             }
@@ -107,8 +108,9 @@ public class LoginCommand {
     public AccountSystem getAccountSystem() {
         return system;
     }
+    public String getLoginUsername() {return username;}
 
-    public ValidateCredentials getValidateCredentials() {
-        return cred;
-    }
+    public String getLoginPassword() {return password;}
+
+    public void resetInfo() {username = null; password = null;}
 }
