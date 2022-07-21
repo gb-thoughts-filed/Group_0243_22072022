@@ -9,32 +9,43 @@ import java.awt.event.KeyEvent;
 import java.util.Map;
 import java.awt.event.KeyListener;
 
-public class PlayGame implements GameGUIControllerInterface{
+public class PlayGame {
     private KeyListener listener;
 
     private boolean up, down;
-    GameManager manager = new GameManager();
+    GameManager manager;
     GameBoard board = new GameBoard();
     GUI gui_gamescreen = new GUI();
+    private static int lineNumber; //A count to print different lines
+    private boolean running;
 
     /**
      * Creates new GameProgram.PlayGame object.
      */
-    public PlayGame(){}
+    public PlayGame(Login.UserAccount user){
+        lineNumber = 0;
+        running = true;
+        this.manager = new GameManager(user);
+    }
 
-    public void selectOption(String menuOption){
-        char[] option = menuOption.toCharArray();
-        if(option[0] == 1) {
-            //start the game
-            System.out.println(manager.getPlayer().toString());
+    public int selectOption(String input){
+        int output = 0;
+        if (input.equals("1")){
+            output = 1;
             runGame();
-        } else if (option[0] == 2) {
-            System.out.println(displayLeaderboard());
-        } else if (option[0] == 3) {
-            // print a how to play
-            // can be just one long string
         }
-        System.out.println("QUIT");
+        else if (input.equals("2")) {
+            output = 2;
+        }
+        else output = 3;
+        return output;
+        }
+    public boolean isRunning() {
+        return running;
+    }
+
+    public void stopRunning() {
+        running = false;
     }
 
     public Map displayLeaderboard(){
@@ -81,29 +92,6 @@ public class PlayGame implements GameGUIControllerInterface{
         };
     }
 
-    @Override
-    public void makeGamePlayer() {
 
-    }
-
-    @Override
-    public void makeObstacle() {
-
-    }
-
-    @Override
-    public void makeGoldenApple() {
-
-    }
-
-    @Override
-    public void makePoisonApple() {
-
-    }
-
-    @Override
-    public void moveAllLeft() {
-
-    }
 
 }

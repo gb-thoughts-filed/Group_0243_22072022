@@ -3,12 +3,13 @@ package GameProgram;
 import GameProgram.GameBoard;
 import Login.UserAccount;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameManager{
-    private Stopwatch timer;
+    private final Stopwatch timer;
 
-    private List<Reward> totalGoldenApples;
+    private final List<Reward> totalGoldenApples = new ArrayList<>();
 
     private final GamePlayer player;
 
@@ -19,8 +20,8 @@ public class GameManager{
      * Creates new GameProgram.GameManager object. Stores a new GameProgram.GamePlayer object in an instance variable and assigns to it the
      * username of the current user.
      */
-    public GameManager(){
-        player = new GamePlayer(UserAccount.getUsername());
+    public GameManager(UserAccount user) {
+        player = new GamePlayer(user.getUsername());
         score = 0;
         timer = new Stopwatch();
     }
@@ -129,10 +130,5 @@ public class GameManager{
      */
     public GamePlayer getPlayer() { return player; }
 
-
-
-
-    // public GameProgram.Reward randomizeReward(){
-    //  similar to above, just need reward class to be completed
 
 }

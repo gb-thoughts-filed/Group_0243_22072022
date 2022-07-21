@@ -1,21 +1,20 @@
 package GameProgram;
 
-import Login.UserAccount;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class    GamePlayer{
-    private String username;
-    private Point location;
-    private boolean deadEnd;
+    private final String username;
+    private final Point location;
+    private final boolean deadEnd;
 
-    private Dimension dimensions = new Dimension(25, 15);
+    private final Dimension dimensions = new Dimension(25, 15);
 
 
     public GamePlayer(String name){
-        username = UserAccount.getUsername();
+        username = name;
         deadEnd = false;
         // this.name = username from account
         location = new Point(80, 140);
@@ -35,12 +34,11 @@ public class    GamePlayer{
     }
 
     public List<Double> getLocation(){
-        List<Double> coordinates = new ArrayList<Double>();
+        List<Double> coordinates = new ArrayList<>();
         double xPos = this.location.getX();
         double yPos = this.location.getY();
         coordinates.add(xPos);
         coordinates.add(yPos);
-
         return coordinates;
     }
 

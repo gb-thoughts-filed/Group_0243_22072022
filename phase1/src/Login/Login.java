@@ -33,6 +33,9 @@ public class Login {
                 System.out.println("Welcome " + command.getLoginUsername() +"\n" + command.getLoginUsername() +
                         "'s login times: " + command.getAccountSystem().logIn(command.getLoginUsername(),
                         command.getLoginPassword()).loginHistory(LocalDateTime.now()));
+                GameProgram.Menu main = new GameProgram.Menu();
+                main.mainMenu(command.getAccountSystem().logIn(command.getLoginUsername(),
+                        command.getLoginPassword()));
             }
             else if (line == 8) {
                 System.out.println("Invalid Username or Password");
