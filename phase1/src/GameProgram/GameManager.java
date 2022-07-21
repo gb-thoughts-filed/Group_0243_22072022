@@ -1,6 +1,7 @@
 package GameProgram;
 
 import GameProgram.GameBoard;
+import Login.UserAccount;
 
 import java.util.List;
 
