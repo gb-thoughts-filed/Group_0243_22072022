@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 import java.util.Map;
 import java.awt.event.KeyListener;
 
-public class PlayGame {
+public class PlayGame implements GameGUIControllerInterface{
     private KeyListener listener;
 
     private boolean up, down;
@@ -80,4 +80,30 @@ public class PlayGame {
             }
         };
     }
+
+    @Override
+    public void makeGamePlayer() {
+
+    }
+
+    @Override
+    public void makeObstacle() {
+
+    }
+
+    @Override
+    public void makeGoldenApple() {
+
+    }
+
+    @Override
+    public void makePoisonApple() {
+
+    }
+
+    @Override
+    public void moveAllLeft() {
+
+    }
+
 }

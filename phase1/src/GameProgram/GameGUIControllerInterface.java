@@ -10,7 +10,7 @@ public interface GameGUIControllerInterface {
 
     public void makePoisonApple();
 
-    public void moveallleft();
+    public void moveAllLeft();
 
 
 }
