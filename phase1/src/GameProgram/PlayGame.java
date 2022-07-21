@@ -48,7 +48,7 @@ public class PlayGame {
         running = false;
     }
 
-    public Map displayLeaderboard(){
+    public Map<String, Integer> displayLeaderboard(){
         Leaderboard scoreBoard = new Leaderboard();
         return scoreBoard.getAllTimeScores();
     }
