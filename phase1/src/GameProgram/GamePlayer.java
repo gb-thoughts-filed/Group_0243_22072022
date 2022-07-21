@@ -39,7 +39,6 @@ public class    GamePlayer{
         double yPos = this.location.getY();
         coordinates.add(xPos);
         coordinates.add(yPos);
-
         return coordinates;
     }
 
