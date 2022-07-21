@@ -23,8 +23,8 @@ public class Menu {
             } else if (line == 2) {
                 System.out.println(play.displayLeaderboard());
             } else if (line == 3) {
-                System.out.println("\"Use UP and DOWN arrow keys to move the bird and avoid obstacles. Collect golden apples \" +\n" +
-                        "                        \"to increase your score. Avoid poison apples or the game will end!\"");
+                System.out.println("Use UP and DOWN arrow keys to move the bird and avoid obstacles. Collect golden apples " +
+                        "to increase your score. Avoid poison apples or the game will end!");
             }
         }
 }

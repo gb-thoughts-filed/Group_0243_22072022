@@ -4,12 +4,19 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Login {
+    static LoginCommand command = new LoginCommand();
+    static Scanner myObj = new Scanner(System.in);
+    static int line = 0;
+    static public void go(){
+        System.out.println("Welcome " + command.getLoginUsername() +"\n" + command.getLoginUsername() +
+            "'s login times: " + command.getAccountSystem().logIn(command.getLoginUsername(),
+            command.getLoginPassword()).loginHistory(LocalDateTime.now()));
+        GameProgram.Menu main = new GameProgram.Menu();
+        main.mainMenu(command.getAccountSystem().logIn(command.getLoginUsername(),
+                command.getLoginPassword()));
+    }
     public static void main(String[] args) {
-        LoginCommand command = new LoginCommand();
-        Scanner myObj = new Scanner(System.in);
-        int line = 0;
         System.out.println("-----Welcome-----");
-
         while (command.isRunning()) {
             if (line == 0) {
                 System.out.println("OLD or NEW");
@@ -30,12 +37,7 @@ public class Login {
                 System.out.println("Enter password");
             }
             else if (line == 6) {
-                System.out.println("Welcome " + command.getLoginUsername() +"\n" + command.getLoginUsername() +
-                        "'s login times: " + command.getAccountSystem().logIn(command.getLoginUsername(),
-                        command.getLoginPassword()).loginHistory(LocalDateTime.now()));
-                GameProgram.Menu main = new GameProgram.Menu();
-                main.mainMenu(command.getAccountSystem().logIn(command.getLoginUsername(),
-                        command.getLoginPassword()));
+                go();
             }
             else if (line == 8) {
                 System.out.println("Invalid Username or Password");
