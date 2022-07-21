@@ -1,5 +1,7 @@
 package GameProgram;
 
+import GUI.GUI;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -21,6 +23,7 @@ public class Menu {
 
             if (line == 1) {
                 System.out.println("BEGIN GAME");
+                GUI gamescreen = new GUI();
             } else if (line == 2) {
                 System.out.println(play.displayLeaderboard());
             } else if (line == 3) {
