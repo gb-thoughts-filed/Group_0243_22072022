@@ -1,3 +1,4 @@
+import GameProgram.GoldenApple;
 import org.junit.Test;
 
 public class GoldenAppleTest {

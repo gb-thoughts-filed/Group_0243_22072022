@@ -1,3 +1,4 @@
+import GameProgram.GameBoard;
 import org.junit.Test;
 
 public class GameBoardTest {

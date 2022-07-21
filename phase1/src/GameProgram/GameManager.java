@@ -1,6 +1,8 @@
-import java.util.ArrayList;
+package GameProgram;
+
+import GameProgram.GameBoard;
+
 import java.util.List;
-import java.util.Random;
 
 public class GameManager{
     private Stopwatch timer;
@@ -13,7 +15,7 @@ public class GameManager{
     int score;
 
     /**
-     * Creates new GameManager object. Stores a new GamePlayer object in an instance variable and assigns to it the
+     * Creates new GameProgram.GameManager object. Stores a new GameProgram.GamePlayer object in an instance variable and assigns to it the
      * username of the current user.
      */
     public GameManager(){
@@ -47,7 +49,7 @@ public class GameManager{
      */
     public void startGame() {
         // if we don't want to make player an instance variable, call it here
-        // GamePlayer newPlayer = new GamePlayer(UserAccount username insert here)
+        // GameProgram.GamePlayer newPlayer = new GameProgram.GamePlayer(UserAccount username insert here)
         this.grid = new GameBoard();
         timer.start();
     }
@@ -122,14 +124,14 @@ public class GameManager{
 
     /**
      * Returns the player of the current game.
-     * @return GamePlayer player of the current game
+     * @return GameProgram.GamePlayer player of the current game
      */
     public GamePlayer getPlayer() { return player; }
 
 
 
 
-    // public Reward randomizeReward(){
+    // public GameProgram.Reward randomizeReward(){
     //  similar to above, just need reward class to be completed
 
 }

@@ -1,3 +1,10 @@
+package GameProgram;
+
+import GUI.GUI;
+import GameProgram.GameBoard;
+import GameProgram.GameManager;
+import GameProgram.Leaderboard;
+
 import java.awt.event.KeyEvent;
 import java.util.Map;
 import java.awt.event.KeyListener;
@@ -11,7 +18,7 @@ public class PlayGame {
     GUI gui_gamescreen = new GUI();
 
     /**
-     * Creates new PlayGame object.
+     * Creates new GameProgram.PlayGame object.
      */
     public PlayGame(){}
 

@@ -1,3 +1,5 @@
+package GameProgram;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -15,7 +17,7 @@ public class GameBoard {
     private final String player_username = UserAccount.getUsername();
 
     /**
-     * Creates new GameBoard object.
+     * Creates new GameProgram.GameBoard object.
      */
     public GameBoard() {
         this.obstacleList.add(new Obstacle(120, 120, 100));
@@ -109,7 +111,7 @@ public class GameBoard {
 
     /**
      * Creates a new randomized obstacle.
-     * @return Obstacle
+     * @return GameProgram.Obstacle
      */
     public Obstacle randomizeObstacle() {
         List<Obstacle> obstacleList = new ArrayList<>();

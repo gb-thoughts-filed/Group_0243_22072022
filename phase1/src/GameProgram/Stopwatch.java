@@ -1,3 +1,5 @@
+package GameProgram;
+
 public class Stopwatch {
     private long stopWatchStartTime = 0;
     private long stopWatchStopTime = 0;

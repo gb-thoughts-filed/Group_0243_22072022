@@ -1,3 +1,4 @@
+import GameProgram.Stopwatch;
 import org.junit.Test;
 
 public class StopwatchTest {

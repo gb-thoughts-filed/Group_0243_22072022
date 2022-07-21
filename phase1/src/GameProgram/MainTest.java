@@ -1,3 +1,7 @@
+package GameProgram;
+
+import GameProgram.IntegerComparator;
+
 import java.awt.*;
 import java.util.*;
 

@@ -1,3 +1,4 @@
+import GameProgram.Obstacle;
 import org.junit.Test;
 
 public class ObstacleTest {

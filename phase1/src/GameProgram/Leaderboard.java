@@ -1,10 +1,14 @@
+package GameProgram;
+
+import GameProgram.IntegerComparator;
+
 import java.util.*;
 
 public class Leaderboard {
     private Map<String, Integer> scoreMap;
 
     /**
-     * Creates new Leaderboard object.
+     * Creates new GameProgram.Leaderboard object.
      */
     public Leaderboard(){
         scoreMap = new HashMap<>();

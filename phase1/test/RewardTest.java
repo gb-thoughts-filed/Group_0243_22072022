@@ -1,3 +1,4 @@
+import GameProgram.Reward;
 import org.junit.Test;
 
 public class RewardTest {
