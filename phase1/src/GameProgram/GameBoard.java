@@ -39,8 +39,8 @@ public class GameBoard {
             List<Double> playerPosition = player.getLocation();
             int width = player.getWidth();
             int height = player.getHeight();
-            if (playerPosition.get(0) - width <= oLocation && oLocation <= playerPosition.get(0)) {
-                return playerPosition.get(1) <= blank && playerPosition.get(1) + height >= blank + 40;
+            if (playerPosition.get(0) > oLocation | oLocation + o.getWidth() < playerPosition.get(0) + width) {
+                return (playerPosition.get(1) < blank | playerPosition.get(1) + height > blank + 40);
             } else { return false; }
         }
         return false;
@@ -68,7 +68,7 @@ public class GameBoard {
         List<Reward> remove = new ArrayList<>();
         for (Reward r : rewardsList) {
             List<Double> rewardPosition = r.getRewardsLocation();
-            if (xPos > rewardPosition.get(0) && xPos - player.getHeight() < rewardPosition.get(0) + r.getWidth()) {
+            if (xPos > rewardPosition.get(0) && xPos - player.getWidth() < rewardPosition.get(0) + r.getWidth()) {
                 if (yPos + player.getHeight() > rewardPosition.get(1) && yPos < rewardPosition.get(1) + r.getHeight()) {
                     remove.add(r);
                 }
@@ -144,7 +144,7 @@ public class GameBoard {
     public void moveObjects() {
         for (Obstacle o : obstacleList) {
             o.moveLeft();
-            }
+        }
         for (Reward r : rewardsList) {
             r.moveLeft();
         }
@@ -153,6 +153,12 @@ public class GameBoard {
     public List<Obstacle> getObstacleList() {
         return obstacleList;
     }
+
+    public void addReward(Reward r) {
+        this.rewardsList.add(r);
+    }
+
+    public List<Reward> getRewardsList() { return this.rewardsList; }
 }
 
 

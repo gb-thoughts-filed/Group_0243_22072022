@@ -1,13 +1,10 @@
 package GameProgram;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Obstacle {
-    private Dimension topObstacle;
-    private Dimension bottomObstacle;
+    private final Dimension topObstacle;
+    private final Dimension bottomObstacle;
 
     private int xCoordinate;
 
