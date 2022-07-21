@@ -15,7 +15,7 @@ public class    GamePlayer{
 
 
     public GamePlayer(String name){
-        username = UserAccount.getUsername();
+        username = name;
         deadEnd = false;
         // this.name = username from account
         location = new Point(80, 140);
