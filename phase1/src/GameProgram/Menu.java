@@ -8,9 +8,10 @@ public class Menu {
         PlayGame play = new PlayGame(user);
         Scanner myObj = new Scanner(System.in);
         int line;
+        System.out.println("Welcome to our Game!");
 
         while (play.isRunning()) {
-            System.out.println("Welcome to our Game. Please select a menu option:");
+            System.out.println("Please select a menu option:");
             System.out.println("1. PLAY GAME");
             System.out.println("2. LEADERBOARD");
             System.out.println("3. HOW TO PLAY");
