@@ -16,8 +16,6 @@ public class GameBoard {
 
     private final List<Obstacle> obstacleList = new ArrayList<>();
 
-    private final String player_username = UserAccount.getUsername();
-
     /**
      * Creates new GameProgram.GameBoard object.
      */

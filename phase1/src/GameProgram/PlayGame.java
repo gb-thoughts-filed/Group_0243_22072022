@@ -13,14 +13,16 @@ public class PlayGame implements GameGUIControllerInterface{
     private KeyListener listener;
 
     private boolean up, down;
-    GameManager manager = new GameManager();
+    GameManager manager;
     GameBoard board = new GameBoard();
     GUI gui_gamescreen = new GUI();
 
     /**
      * Creates new GameProgram.PlayGame object.
      */
-    public PlayGame(){}
+    public PlayGame(Login.UserAccount user){
+        this.manager = new GameManager(user);
+    }
 
     public void selectOption(String menuOption){
         char[] option = menuOption.toCharArray();

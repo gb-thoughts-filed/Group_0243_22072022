@@ -19,8 +19,8 @@ public class GameManager{
      * Creates new GameProgram.GameManager object. Stores a new GameProgram.GamePlayer object in an instance variable and assigns to it the
      * username of the current user.
      */
-    public GameManager(){
-        player = new GamePlayer(UserAccount.getUsername());
+    public GameManager(UserAccount user) {
+        player = new GamePlayer(user.getUsername());
         score = 0;
         timer = new Stopwatch();
     }
