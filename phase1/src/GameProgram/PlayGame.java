@@ -29,7 +29,7 @@ public class PlayGame {
     }
 
     public int selectOption(String input){
-        int output = 0;
+        int output;
         if (input.equals("1")){
             output = 1;
             runGame();
