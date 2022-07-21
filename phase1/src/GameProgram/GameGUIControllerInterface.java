@@ -2,13 +2,13 @@ package GameProgram;
 
 public interface GameGUIControllerInterface {
 
-    public void makeGamePlayer();
+    public void moveGamePlayer(int xpos, int ypos);
 
-    public void makeObstacle();
+    public void makeObstacle(int xpos, int height);
 
-    public void makeGoldenApple();
+    public void makeGoldenApple(int xpos, int ypos);
 
-    public void makePoisonApple();
+    public void makePoisonApple(int xpos, int ypos);
 
     public void moveAllLeft();
 

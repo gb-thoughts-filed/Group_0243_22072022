@@ -18,4 +18,8 @@ public class obstaclevisual extends JPanel {
     public void setXpos(int xpos) {
         this.xpos = xpos;
     }
+
+    public int getXpos(){
+        return this.xpos;
+    }
 }
