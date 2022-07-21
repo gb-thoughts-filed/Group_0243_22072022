@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserAccount {
-    private static String username;
+    private String username;
     private String password;
 
     protected boolean admin;
@@ -22,7 +22,7 @@ public class UserAccount {
         this.username = username;
     }
     
-    public static String getUsername() {
+    public String getUsername() {
         return username;
     }
 
