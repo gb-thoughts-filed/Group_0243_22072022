@@ -1,19 +1,17 @@
-package GUI;
+package The_GUI;
 
 import javax.swing.*;
 import java.awt.*;
 
-
-public class poisonapplevisual extends JPanel {
-
+public class goldenapplevisual extends JPanel {
 
     private int xpos;
 
     private int ypos;
 
-    public poisonapplevisual(int xpos, int ypos){
+    public goldenapplevisual(int xpos, int ypos){
         this.setBounds(xpos, ypos, 10, 10);
-        this.setBackground(Color.BLACK);
+        this.setBackground(new Color(212, 175, 55));
 
     }
 
@@ -25,5 +23,4 @@ public class poisonapplevisual extends JPanel {
         return this.xpos;
     }
 }
-
 

@@ -1,6 +1,6 @@
 package GameProgram;
 
-import Login.UserAccount;
+import The_GUI.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -120,6 +120,7 @@ public class GameBoard {
         obstacleList.add(new Obstacle(120, 120, this.width));
         Random rand = new Random();
         int index = rand.nextInt(obstacleList.size());
+        GUI.makeObstacleVisual(obstacleList.get(index).getLocation(), obstacleList.get(index).getTopObstacleHeight());
         return obstacleList.get(index);
     }
 
@@ -146,6 +147,8 @@ public class GameBoard {
         for (Reward r : rewardsList) {
             r.moveLeft();
         }
+        GUI.moveAllLeftVisual();
+
     }
 
     public List<Obstacle> getObstacleList() {
@@ -157,6 +160,8 @@ public class GameBoard {
     }
 
     public List<Reward> getRewardsList() { return this.rewardsList; }
+
+
 }
 
 

@@ -1,4 +1,4 @@
-package GUI;
+package The_GUI;
 
 import GameProgram.GameGUIControllerInterface;
 
@@ -45,13 +45,13 @@ public class GUI implements GameGUIControllerInterface {
 
     }
 
-    public void moveGamePlayer(int ypos) {
+    public static void moveGamePlayerVisual(int ypos) {
 
         g.setYpos(ypos);
 
     }
 
-    public void makeObstacle(int xpos, int height) {
+    public static void makeObstacleVisual(int xpos, int height) {
 
         int bottom_obs_y = height + 50;
         obstaclevisual top_obs = new obstaclevisual(xpos, 0, height);
@@ -63,7 +63,7 @@ public class GUI implements GameGUIControllerInterface {
 
     }
 
-    public void makeGoldenApple(int xpos, int ypos) {
+    public static void makeGoldenAppleVisual(int xpos, int ypos) {
 
         goldenapplevisual ga = new goldenapplevisual(xpos, ypos);
 
@@ -72,7 +72,7 @@ public class GUI implements GameGUIControllerInterface {
 
     }
 
-    public void makePoisonApple(int xpos, int ypos) {
+    public static void makePoisonAppleVisual(int xpos, int ypos) {
 
         poisonapplevisual pa = new poisonapplevisual(xpos, ypos);
 
@@ -81,7 +81,7 @@ public class GUI implements GameGUIControllerInterface {
 
     }
 
-    public void moveAllLeft() {
+    public static void moveAllLeftVisual() {
 
         for(obstaclevisual i : obstaclevisualList){
             int x_position = i.getXpos();
