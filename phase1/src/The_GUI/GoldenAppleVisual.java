@@ -3,13 +3,13 @@ package The_GUI;
 import javax.swing.*;
 import java.awt.*;
 
-public class goldenapplevisual extends JPanel {
+public class GoldenAppleVisual extends JPanel {
 
     private int xpos;
 
     private int ypos;
 
-    public goldenapplevisual(int xpos, int ypos){
+    public GoldenAppleVisual(int xpos, int ypos){
         this.setBounds(xpos, ypos, 10, 10);
         this.setBackground(new Color(212, 175, 55));
 

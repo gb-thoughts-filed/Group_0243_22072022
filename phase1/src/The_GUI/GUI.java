@@ -9,13 +9,13 @@ import java.util.List;
 
 public class GUI implements GameGUIControllerInterface {
 
-    private static gameplayervisual g = new gameplayervisual(20, 20);
+    private static GamePlayerVisual g = new GamePlayerVisual(20, 20);
 
-    private static List<goldenapplevisual> goldenapplevisualList = new ArrayList<goldenapplevisual>();
+    private static List<GoldenAppleVisual> goldenapplevisualList = new ArrayList<GoldenAppleVisual>();
 
-    private static List<poisonapplevisual> poisonapplevisualList = new ArrayList<poisonapplevisual>();
+    private static List<PoisonAppleVisual> poisonapplevisualList = new ArrayList<PoisonAppleVisual>();
 
-    private static List<obstaclevisual> obstaclevisualList = new ArrayList<obstaclevisual>();
+    private static List<ObstacleVisual> obstaclevisualList = new ArrayList<ObstacleVisual>();
 
     private static JFrame frame = null;
 
@@ -54,8 +54,8 @@ public class GUI implements GameGUIControllerInterface {
     public static void makeObstacleVisual(int xpos, int height) {
 
         int bottom_obs_y = height + 50;
-        obstaclevisual top_obs = new obstaclevisual(xpos, 0, height);
-        obstaclevisual bottom_obs = new obstaclevisual(xpos, bottom_obs_y, 600 - height);
+        ObstacleVisual top_obs = new ObstacleVisual(xpos, 0, height);
+        ObstacleVisual bottom_obs = new ObstacleVisual(xpos, bottom_obs_y, 600 - height);
         frame.add(top_obs);
         frame.add(bottom_obs);
         obstaclevisualList.add(top_obs);
@@ -65,7 +65,7 @@ public class GUI implements GameGUIControllerInterface {
 
     public static void makeGoldenAppleVisual(int xpos, int ypos) {
 
-        goldenapplevisual ga = new goldenapplevisual(xpos, ypos);
+        GoldenAppleVisual ga = new GoldenAppleVisual(xpos, ypos);
 
         frame.add(ga);
         goldenapplevisualList.add(ga);
@@ -74,7 +74,7 @@ public class GUI implements GameGUIControllerInterface {
 
     public static void makePoisonAppleVisual(int xpos, int ypos) {
 
-        poisonapplevisual pa = new poisonapplevisual(xpos, ypos);
+        PoisonAppleVisual pa = new PoisonAppleVisual(xpos, ypos);
 
         frame.add(pa);
         poisonapplevisualList.add(pa);
@@ -83,17 +83,17 @@ public class GUI implements GameGUIControllerInterface {
 
     public static void moveAllLeftVisual() {
 
-        for(obstaclevisual i : obstaclevisualList){
+        for(ObstacleVisual i : obstaclevisualList){
             int x_position = i.getXpos();
             i.setXpos(x_position - 1);
         }
 
-        for(goldenapplevisual i : goldenapplevisualList){
+        for(GoldenAppleVisual i : goldenapplevisualList){
             int x_position = i.getXpos();
             i.setXpos(x_position - 1);
         }
 
-        for(poisonapplevisual i : poisonapplevisualList){
+        for(PoisonAppleVisual i : poisonapplevisualList){
             int x_position = i.getXpos();
             i.setXpos(x_position - 1);
         }
