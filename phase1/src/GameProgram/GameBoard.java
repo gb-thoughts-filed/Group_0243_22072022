@@ -2,6 +2,7 @@ package GameProgram;
 
 import The_GUI.*;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -9,6 +10,8 @@ import java.util.Random;
 public class GameBoard {
 
     private final int width = 300;
+
+    private JFrame frame = GUI.frame;
 
     private final int height = 600;
 
@@ -121,15 +124,18 @@ public class GameBoard {
         Random rand = new Random();
         int index = rand.nextInt(obstacleList.size());
 
-        if (obstacleList.get(index).getTopObstacleHeight() == 320){
-            The_GUI.GUI.frame.add(GUI.top_o1);
-            The_GUI.GUI.frame.add(GUI.bottom_o1);
-        }else if (obstacleList.get(index).getTopObstacleHeight() == 160){
-            The_GUI.GUI.frame.add(GUI.top_o2);
-            The_GUI.GUI.frame.add(GUI.bottom_o2);
-        }else{
-            The_GUI.GUI.frame.add(GUI.top_o3);
-            The_GUI.GUI.frame.add(GUI.bottom_o3);
+        if (GUI.frame != null) {
+
+            if (obstacleList.get(index).getTopObstacleHeight() == 320) {
+                frame.add(GUI.top_o1);
+                frame.add(GUI.bottom_o1);
+            } else if (obstacleList.get(index).getTopObstacleHeight() == 160) {
+                frame.add(GUI.top_o2);
+                frame.add(GUI.bottom_o2);
+            } else {
+                frame.add(GUI.top_o3);
+                frame.add(GUI.bottom_o3);
+            }
         }
 
         return obstacleList.get(index);
