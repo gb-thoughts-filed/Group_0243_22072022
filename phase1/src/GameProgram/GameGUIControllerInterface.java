@@ -2,7 +2,7 @@ package GameProgram;
 
 public interface GameGUIControllerInterface {
 
-    public void moveGamePlayer(int xpos, int ypos);
+    public void moveGamePlayer(int ypos);
 
     public void makeObstacle(int xpos, int height);
 

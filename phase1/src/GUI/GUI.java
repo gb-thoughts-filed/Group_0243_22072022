@@ -45,9 +45,8 @@ public class GUI implements GameGUIControllerInterface {
 
     }
 
-    public void moveGamePlayer(int xpos, int ypos) {
+    public void moveGamePlayer(int ypos) {
 
-        g.setXpos(xpos);
         g.setYpos(ypos);
 
     }
