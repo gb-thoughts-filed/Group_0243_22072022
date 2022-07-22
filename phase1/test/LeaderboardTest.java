@@ -21,4 +21,15 @@ public class LeaderboardTest {
         scoreBoard.updateExistingScore("Mary", 16);
         assert(scoreBoard.getScoreMap().get("Mary") == 16);
     }
+
+    @Test(timeout = 50)
+    public void testToString() {
+        Leaderboard scoreBoard = new Leaderboard();
+        scoreBoard.addNewScore("Mary", 10);
+        scoreBoard.addNewScore("Judy", 12);
+        scoreBoard.addNewScore("John", 28);
+        scoreBoard.addNewScore("July", 19);
+        System.out.println(scoreBoard);
+    }
 }
+

@@ -3,6 +3,7 @@ package GameProgram;
 import GameProgram.IntegerComparator;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Leaderboard {
     private Map<String, Integer> scoreMap;
@@ -14,19 +15,15 @@ public class Leaderboard {
         scoreMap = new HashMap<>();
     }
 
-    /**
-     *
-     */
-    public void setScoreMap(){
-        IntegerComparator n = new IntegerComparator(scoreMap);
-        TreeMap<String, Integer> sorted = new TreeMap<String, Integer>(n);
-        this.scoreMap = sorted;
-    }
-
-    public Map<String, Integer> getAllTimeScores(){
-        IntegerComparator n = new IntegerComparator(scoreMap);
-        TreeMap<String, Integer> sorted = new TreeMap<String, Integer>(n);
-        return sorted;
+    public String toString() {
+        this.scoreMap = scoreMap.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).
+                collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue,
+                        LinkedHashMap::new));
+        StringBuilder string = new StringBuilder();
+        for (String key : scoreMap.keySet()) {
+            string.append(key).append(": ").append(scoreMap.get(key)).append("\r\n");
+        }
+        return string.toString();
     }
 
     /**
@@ -53,11 +50,10 @@ public class Leaderboard {
         return true;
     }
 
+    /**
+     * Returns a Map that matches each username to their highest score.
+     * @return Map that matches each username to their highest score.
+     */
     public Map<String, Integer> getScoreMap() { return this.scoreMap; }
-
-
-
-
-
 }
 

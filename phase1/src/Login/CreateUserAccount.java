@@ -6,7 +6,7 @@ import java.util.List;
 public class CreateUserAccount extends ValidateCredentials {
     private String newUsername;
     private String newPassword;
-    private boolean admin;
+    private final boolean admin;
     protected static List<UserAccount> allCreatedUsers  = new ArrayList<>();
 
 
@@ -74,7 +74,7 @@ public class CreateUserAccount extends ValidateCredentials {
     public UserAccount createUserAccount() {
         if (createPassword(this.newPassword) && createUsername(this.newUsername)) {
             if (this.admin) {
-                AdminAccount admin = new AdminAccount(this.newUsername, this.newPassword);
+                UserAccount admin = new UserAccount(this.newUsername, this.newPassword, true);
                 allCreatedUsers.add(admin);
                 return admin;
             } else {

@@ -1,5 +1,12 @@
+package LoginTests;
+
+import Login.AccountSystem;
+import Login.AdminManager;
+import Login.UserAccount;
 import org.junit.Test;
+
 import java.time.LocalDateTime;
+
 import static org.junit.Assert.*;
 
 public class AdminManagerTest {

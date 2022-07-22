@@ -1,11 +1,18 @@
-import org.junit.*;
+package LoginTests;
+
+import Login.CreateUserAccount;
+import Login.UserAccount;
+import org.junit.Assert;
+import org.junit.Test;
+
 import static org.junit.Assert.*;
+
 public class CreateUserAccountTest {
     @Test(timeout = 50)
     public void testCreatePassword() {
         CreateUserAccount newUser = new CreateUserAccount("John", "123456789", false);
         assertTrue(newUser.createPassword("myNewPass23"));
-        assertEquals("myNewPass23", newUser.getNewPassword());
+        Assert.assertEquals("myNewPass23", newUser.getNewPassword());
     }
 
     @Test(timeout = 50)
@@ -30,8 +37,8 @@ public class CreateUserAccountTest {
                 false);
         UserAccount newUser = firstUser.createUserAccount();
         assertNotNull(newUser);
-        assertEquals("Jane24", newUser.getUsername());
-        assertEquals("251207M12", newUser.getPassword());
+        Assert.assertEquals("Jane24", newUser.getUsername());
+        Assert.assertEquals("251207M12", newUser.getPassword());
     }
 
     @Test(timeout = 50)

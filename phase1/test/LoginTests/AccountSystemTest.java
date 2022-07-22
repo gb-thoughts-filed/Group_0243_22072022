@@ -1,4 +1,7 @@
-import org.junit.*;
+package LoginTests;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
@@ -17,7 +20,7 @@ public class AccountSystemTest {
     public void testLogIn() {
         AccountSystem newSystem = new AccountSystem();
         newSystem.createUser("John24", "123456789", false);
-        assertEquals("John24", newSystem.logIn("John24", "123456789").getUsername());
+        Assert.assertEquals("John24", newSystem.logIn("John24", "123456789").getUsername());
     }
 
     @Test(timeout = 50)
