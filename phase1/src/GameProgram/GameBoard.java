@@ -115,9 +115,9 @@ public class GameBoard {
      */
     public Obstacle randomizeObstacle() {
         List<Obstacle> obstacleList = new ArrayList<>();
-        obstacleList.add(new Obstacle(160, 80, this.width));
-        obstacleList.add(new Obstacle(80, 160, this.width));
-        obstacleList.add(new Obstacle(120, 120, this.width));
+        obstacleList.add(new Obstacle(320, 160, this.width));
+        obstacleList.add(new Obstacle(160, 320, this.width));
+        obstacleList.add(new Obstacle(240, 240, this.width));
         Random rand = new Random();
         int index = rand.nextInt(obstacleList.size());
         return obstacleList.get(index);

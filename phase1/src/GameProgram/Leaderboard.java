@@ -53,6 +53,10 @@ public class Leaderboard {
         return true;
     }
 
+    public Map<String, Integer> getScoreMap() { return this.scoreMap; }
+
+
+
 
 
 }
