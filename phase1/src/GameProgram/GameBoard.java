@@ -120,6 +120,18 @@ public class GameBoard {
         obstacleList.add(new Obstacle(240, 240, this.width));
         Random rand = new Random();
         int index = rand.nextInt(obstacleList.size());
+
+        if (obstacleList.get(index).getTopObstacleHeight() == 320){
+            The_GUI.GUI.frame.add(GUI.top_o1);
+            The_GUI.GUI.frame.add(GUI.bottom_o1);
+        }else if (obstacleList.get(index).getTopObstacleHeight() == 160){
+            The_GUI.GUI.frame.add(GUI.top_o2);
+            The_GUI.GUI.frame.add(GUI.bottom_o2);
+        }else{
+            The_GUI.GUI.frame.add(GUI.top_o3);
+            The_GUI.GUI.frame.add(GUI.bottom_o3);
+        }
+
         return obstacleList.get(index);
     }
 
