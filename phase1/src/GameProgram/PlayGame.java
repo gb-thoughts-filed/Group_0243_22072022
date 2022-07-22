@@ -15,7 +15,6 @@ public class PlayGame {
     private boolean up, down;
     GameManager manager;
     GameBoard board = new GameBoard();
-    GUI gui_gamescreen = new GUI();
     private static int lineNumber; //A count to print different lines
     private boolean running;
 
