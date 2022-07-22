@@ -120,7 +120,6 @@ public class GameBoard {
         obstacleList.add(new Obstacle(120, 120, this.width));
         Random rand = new Random();
         int index = rand.nextInt(obstacleList.size());
-        GUI.makeObstacleVisual(obstacleList.get(index).getLocation(), obstacleList.get(index).getTopObstacleHeight());
         return obstacleList.get(index);
     }
 

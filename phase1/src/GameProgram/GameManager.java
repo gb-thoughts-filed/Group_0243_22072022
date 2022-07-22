@@ -35,6 +35,7 @@ public class GameManager{
         Double yCoord = player.getLocation().get(1);
         double newY = yCoord + 1.0;
         player.setLocation(xCoord, newY);
+        GUI.moveGamePlayerVisual((int) (yCoord - 1.0));
     }
 
     /**
@@ -45,6 +46,7 @@ public class GameManager{
         Double yCoord = player.getLocation().get(1);
         double newY = yCoord - 1.0;
         player.setLocation(xCoord, newY);
+        GUI.moveGamePlayerVisual((int) (yCoord + 1.0));
     }
 
     /**
