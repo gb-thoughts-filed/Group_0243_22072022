@@ -17,7 +17,7 @@ public class GUI implements GameGUIControllerInterface {
 
     private static List<obstaclevisual> obstaclevisualList = new ArrayList<obstaclevisual>();
 
-    private static JFrame frame = null;
+    private static JFrame frame;
 
     //source to help make initial GUI frame: https://www.guru99.com/java-swing-gui.html#4
 
