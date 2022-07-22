@@ -1,6 +1,6 @@
 package GameProgram;
 
-import GUI.GUI;
+import The_GUI.GUI;
 
 import java.util.Scanner;
 
