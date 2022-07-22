@@ -11,13 +11,22 @@ public class GUI implements GameGUIControllerInterface {
 
     private static GamePlayerVisual g = new GamePlayerVisual(20, 20);
 
+    public static ObstacleVisual top_o1 = new ObstacleVisual(120, 0, 320);
+    public static ObstacleVisual bottom_o1 = new ObstacleVisual(120, 440, 160);
+
+    public static ObstacleVisual top_o2 = new ObstacleVisual(120, 0, 160);
+    public static ObstacleVisual bottom_o2 = new ObstacleVisual(120, 280, 320);
+
+    public static ObstacleVisual top_o3 = new ObstacleVisual(120, 0, 240);
+    public static ObstacleVisual bottom_o3 = new ObstacleVisual(120, 360, 240);
+
     private static List<GoldenAppleVisual> goldenapplevisualList = new ArrayList<GoldenAppleVisual>();
 
     private static List<PoisonAppleVisual> poisonapplevisualList = new ArrayList<PoisonAppleVisual>();
 
     private static List<ObstacleVisual> obstaclevisualList = new ArrayList<ObstacleVisual>();
 
-    private static JFrame frame;
+    public static JFrame frame;
 
     //source to help make initial GUI frame: https://www.guru99.com/java-swing-gui.html#4
 
@@ -53,11 +62,11 @@ public class GUI implements GameGUIControllerInterface {
 
     public static void makeObstacleVisual(int xpos, int height) {
 
-        int bottom_obs_y = height + 50;
+        int bottom_obs_y = height + 100;
         ObstacleVisual top_obs = new ObstacleVisual(xpos, 0, height);
         ObstacleVisual bottom_obs = new ObstacleVisual(xpos, bottom_obs_y, 600 - height);
-        frame.add(top_obs);
-        frame.add(bottom_obs);
+        //frame.add(top_obs);
+        //frame.add(bottom_obs);
         obstaclevisualList.add(top_obs);
         obstaclevisualList.add(bottom_obs);
 
