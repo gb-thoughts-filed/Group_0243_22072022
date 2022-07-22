@@ -19,7 +19,7 @@ public class Login {
         System.out.println("-----Welcome-----");
         while (command.isRunning()) {
             if (line == 0) {
-                System.out.println("OLD or NEW");
+                System.out.println("Type OLD to LOGIN or NEW to CREATE an account");
             }
             else if (line == 1) {
                 System.out.println("Enter username of length between 5 and 8 inclusive. No special symbols.");

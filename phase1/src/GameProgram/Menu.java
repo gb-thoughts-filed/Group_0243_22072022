@@ -1,6 +1,6 @@
 package GameProgram;
 
-import GUI.GUI;
+import The_GUI.GUI;
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ public class Menu {
         System.out.println("Welcome to our Game!");
 
         while (play.isRunning()) {
-            System.out.println("Please select a menu option:");
+            System.out.println("Please type the number of the corresponding menu option you'd like:");
             System.out.println("1. PLAY GAME");
             System.out.println("2. LEADERBOARD");
             System.out.println("3. HOW TO PLAY");
