@@ -94,10 +94,10 @@ public class GameManager{
     public void endGame() {
         Leaderboard scoreBoard = new Leaderboard();
         timer.stop();
-        score = (int)timer.getElapsedSeconds();
+        updateScore();
         if (!scoreBoard.updateExistingScore(player.getUsername(), score)){
             scoreBoard.addNewScore(player.getUsername(), score);
-        }else{
+        } else {
             scoreBoard.updateExistingScore(player.getUsername(), score);
         }
     }
@@ -105,10 +105,8 @@ public class GameManager{
     /**
      * Updates the score variable while the game is running based on the time elapsed.
      */
-    public void updateScore(){
-        while(timer.isStopWatchRunning()) {
-            score = (int)timer.getElapsedSeconds();
-        }
+    public void updateScore() {
+        score = (int)timer.getElapsedSeconds();
     }
 
     /**
@@ -132,6 +130,8 @@ public class GameManager{
      * @return GameProgram.GamePlayer player of the current game
      */
     public GamePlayer getPlayer() { return player; }
+
+    public GameBoard getGameBoard() { return this.grid; }
 
 
 }
