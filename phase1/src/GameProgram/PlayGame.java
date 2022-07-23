@@ -1,6 +1,12 @@
 package GameProgram;
 
+import The_GUI.GUI;
+import GameProgram.GameBoard;
+import GameProgram.GameManager;
+import GameProgram.Leaderboard;
+
 import java.awt.event.KeyEvent;
+import java.util.Map;
 import java.awt.event.KeyListener;
 
 public class PlayGame {
@@ -41,9 +47,9 @@ public class PlayGame {
         running = false;
     }
 
-    public String displayLeaderboard(){
+    public Map<String, Integer> displayLeaderboard(){
         Leaderboard scoreBoard = new Leaderboard();
-        return scoreBoard.toString();
+        return scoreBoard.getScoreMap();
     }
 
     public void runGame(){
