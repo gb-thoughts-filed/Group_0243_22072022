@@ -20,4 +20,11 @@ public class ObstacleTest {
         assert (block.getBottomObstacleHeight() == 35);
         assert (block.getWidth() == 45);
     }
+
+    @Test(timeout = 50)
+    public void testMoveLeft() {
+        Obstacle block = new Obstacle(100, 100, 40);
+        block.moveLeft();
+        assert (block.getLocation() == 39);
+    }
 }
