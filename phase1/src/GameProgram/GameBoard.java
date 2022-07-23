@@ -120,7 +120,7 @@ public class GameBoard {
         List<Obstacle> obstacleList = new ArrayList<>();
         obstacleList.add(new Obstacle(320, 160, this.width));
         obstacleList.add(new Obstacle(160, 320, this.width));
-        obstacleList.add(new Obstacle(240, 240, this.width));
+        obstacleList.add(new Obstacle((this.height - 120) / 2, (this.height - 120) / 2, this.width));
         Random rand = new Random();
         int index = rand.nextInt(obstacleList.size());
 
