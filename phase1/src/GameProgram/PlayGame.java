@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 import java.util.Map;
 import java.awt.event.KeyListener;
 
-public class PlayGame {
+public class PlayGame implements KeyListener{
 
     private boolean up, down;
     GameManager manager;
@@ -60,38 +60,25 @@ public class PlayGame {
         }
     }
 
-    public void move(){
-        //https://stackoverflow.com/questions/65374511/how-to-move-object-with-keylistener-in-java source to help make this
-        KeyListener listener = new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
 
-            }
+    @Override
+    public void keyTyped(KeyEvent e) {
 
-            @Override
-            public void keyPressed(KeyEvent e) {
-                switch (e.getKeyCode()) {
-                    case KeyEvent.VK_DOWN:
-                        down = true;
-                    case KeyEvent.VK_UP:
-                        up = true;
-                }
+    }
 
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                switch (e.getKeyCode()) {
-                    case KeyEvent.VK_DOWN:
-                        down = false;
-                    case KeyEvent.VK_UP:
-                        up = false;
-                }
-
-            }
-        };
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode()==KeyEvent.VK_UP) {
+            manager.moveUp();
+        }
+        else if(e.getKeyCode()==KeyEvent.VK_DOWN){
+            manager.moveDown();
+        }
     }
 
 
+    @Override
+    public void keyReleased(KeyEvent e) {
 
+    }
 }
