@@ -1,5 +1,6 @@
 import GameProgram.GameBoard;
 import GameProgram.GameManager;
+import GameProgram.GoldenApple;
 import Login.UserAccount;
 import org.junit.Test;
 
@@ -67,8 +68,22 @@ public class GameManagerTest {
 
     @Test(timeout = 50)
     public void testEndGame() {
+    }
 
-
+    @Test(timeout = 50)
+    public void testGenerateRewardScore() {
+        UserAccount user = new UserAccount("Jane", "12345678", false);
+        GameManager manager = new GameManager(user);
+        manager.getGameBoard().addReward(new GoldenApple(81, 140));
+        manager.startGame();
+        manager.runGame();
+        try {
+            Thread.sleep(5000); }
+        catch(InterruptedException ex)
+        {
+            ex.printStackTrace(); }
+        manager.generateRewardScore();
+        assert(manager.getScore() == 15);
 
     }
 

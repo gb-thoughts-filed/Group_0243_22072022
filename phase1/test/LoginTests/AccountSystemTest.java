@@ -1,5 +1,8 @@
 package LoginTests;
 
+import Login.AccountSystem;
+import Login.CreateUserAccount;
+import Login.UserAccount;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +15,7 @@ public class AccountSystemTest {
         CreateUserAccount newUser = new CreateUserAccount("John", "123456789", false);
         UserAccount user = newUser.createUserAccount();
         if (user != null) {
-            assertTrue(AccountSystem.allUsers.contains(user));
+            assertTrue(AccountSystem.getAllUsers().contains(user));
         }
     }
 

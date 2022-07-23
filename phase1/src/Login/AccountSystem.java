@@ -60,4 +60,6 @@ public class AccountSystem {
         return false;
     }
 
+    public static List<UserAccount> getAllUsers() { return allUsers; }
+
 }

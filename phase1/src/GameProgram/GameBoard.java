@@ -11,7 +11,7 @@ public class GameBoard {
 
     private final int width = 300;
 
-    private JFrame frame = GUI.frame;
+    private final JFrame frame = GUI.frame;
 
     private final int height = 600;
 

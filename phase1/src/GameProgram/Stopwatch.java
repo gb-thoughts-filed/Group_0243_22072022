@@ -13,10 +13,9 @@ public class Stopwatch {
         return stopWatchRunning;
     }
 
-    public boolean start() {
+    public void start() {
         this.stopWatchStartTime = System.nanoTime();
         this.stopWatchRunning = true;
-        return true;
     }
 
 

@@ -1,12 +1,6 @@
 package GameProgram;
 
-import The_GUI.GUI;
-import GameProgram.GameBoard;
-import GameProgram.GameManager;
-import GameProgram.Leaderboard;
-
 import java.awt.event.KeyEvent;
-import java.util.Map;
 import java.awt.event.KeyListener;
 
 public class PlayGame {

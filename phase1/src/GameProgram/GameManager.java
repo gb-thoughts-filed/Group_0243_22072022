@@ -1,6 +1,4 @@
 package GameProgram;
-
-import GameProgram.GameBoard;
 import Login.UserAccount;
 
 import java.util.ArrayList;
@@ -89,7 +87,6 @@ public class GameManager{
 
     /**
      * Ends the current game, calculates the score of the game and updates the leaderboard, if required.
-     * @return boolean
      */
     public void endGame() {
         Leaderboard scoreBoard = new Leaderboard();

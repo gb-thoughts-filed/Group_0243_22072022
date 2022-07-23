@@ -1,7 +1,5 @@
 package GameProgram;
 
-import GameProgram.IntegerComparator;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
