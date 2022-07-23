@@ -24,6 +24,7 @@ public class Menu {
             if (line == 1) {
                 System.out.println("BEGIN GAME");
                 GUI gamescreen = new GUI();
+                play.runGame();
             } else if (line == 2) {
                 System.out.println(play.displayLeaderboard());
             } else if (line == 3) {

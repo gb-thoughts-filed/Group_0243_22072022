@@ -1,9 +1,9 @@
 package GameProgram;
 import Login.UserAccount;
+import The_GUI.GUI;
 
 import java.util.ArrayList;
 import java.util.List;
-import The_GUI.*;
 
 public class GameManager{
     private final Stopwatch timer;
@@ -12,7 +12,7 @@ public class GameManager{
 
     private final GamePlayer player;
 
-    private GameBoard grid;
+    private GameBoard grid = new GameBoard();
     int score;
 
     /**
